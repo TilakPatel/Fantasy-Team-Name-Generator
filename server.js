@@ -10,16 +10,17 @@ const clientSecret = '<your client secret>'
 // Serve only the static files form the dist directory
 app.use(express.static('./dist/FantasyTeamNameGenerator'));
 
-app.get('/', function(req,res) {
+app.get('', function(req,res) {
     
 res.sendFile(path.join(__dirname,'/dist/FantasyTeamNameGenerator/index.html'));
 });
 
 // Declare the redirect route
 app.get('/oauth/redirect', (req, res) => {
-    // // The req.query object has the query params that
-    // // were sent to this route. We want the `code` param
-    // const requestToken = req.query.code
+    // The req.query object has the query params that
+    // were sent to this route. We want the `code` param
+    const requestToken = req.query.code
+    res.send(requestToken)
     // axios({
     //   // make a POST request
     //   method: 'post',
@@ -35,9 +36,8 @@ app.get('/oauth/redirect', (req, res) => {
     //   // the response body
     //   const accessToken = response.data.access_token
     //   // redirect the user to the welcome page, along with the access token
-    //   res.redirect(`/nicknames/${accessToken}`)
+    //   res.redirect(`/stats.html?access_token=${accessToken}`)
     // })
-    res.send('Hello World!')
   })
 
 // Start the app by listening on the default Heroku port
