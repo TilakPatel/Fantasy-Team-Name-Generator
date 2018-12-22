@@ -36,4 +36,8 @@ app.get('/oauth/redirect', (req, res) => {
 })
 
 app.use(express.static(__dirname + '/public'))
-app.listen(8080)
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
+app.listen(port);
