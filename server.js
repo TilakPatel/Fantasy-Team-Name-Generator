@@ -10,7 +10,7 @@ const clientSecret = '<your client secret>'
 // Serve only the static files form the dist directory
 app.use(express.static('./dist/FantasyTeamNameGenerator'));
 
-app.get('/*', function(req,res) {
+app.get('/', function(req,res) {
     
 res.sendFile(path.join(__dirname,'/dist/FantasyTeamNameGenerator/index.html'));
 });
@@ -35,7 +35,7 @@ app.get('/oauth/redirect', (req, res) => {
       // the response body
       const accessToken = response.data.access_token
       // redirect the user to the welcome page, along with the access token
-      res.redirect(`/stats.html?access_token=${accessToken}`)
+      res.redirect(`/nicknames/${accessToken}`)
     })
   })
 
