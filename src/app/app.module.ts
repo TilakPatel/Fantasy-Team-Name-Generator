@@ -6,10 +6,9 @@ import { NicknameDisplayComponent } from './nickname-display/nickname-display.co
 import { Routes, RouterModule } from '@angular/router';
 import { TeamPickerComponent } from './team-picker/team-picker.component';
 import { HttpClientModule } from '@angular/common/http';
-import { environment } from '../environments/environment';
 const appRoutes: Routes = [
   {path: 'nicknames', component: NicknameDisplayComponent},
-  {path: '**', component: OAuthButtonComponent},
+  {path: '', component: OAuthButtonComponent},
   {path: 'teamPicker/:token', component: TeamPickerComponent}
 ]
 
