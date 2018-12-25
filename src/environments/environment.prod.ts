@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  serverURL: 'https://fantasynamegeneratorbackend.herokuapp.com'
+  URL: 'https://fantasynamegeneratorbackend.herokuapp.com'
 };

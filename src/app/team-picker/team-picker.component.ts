@@ -10,7 +10,7 @@ import {environment} from '../../environments/environment'
 })
 export class TeamPickerComponent implements OnInit {
   teams: Team[] = [];
-  serverURL: string = environment.serverURL;
+  serverURL: string = environment.URL;
   accessToken: number; //yahoo api access token
   constructor(private route: ActivatedRoute, private http: HttpClient) { }
 
