@@ -9,7 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { environment } from '../environments/environment';
 const appRoutes: Routes = [
   {path: 'nicknames', component: NicknameDisplayComponent},
-  {path: '', component: OAuthButtonComponent},
+  {path: '**', component: OAuthButtonComponent},
   {path: 'teamPicker/:token', component: TeamPickerComponent}
 ]
 
