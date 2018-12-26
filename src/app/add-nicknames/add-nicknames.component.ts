@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http'
 import { environment } from '../../environments/environment'
 import { Player } from '../nickname-display/player-model';
+import { JQueryStatic } from 'node_modules/jquery'
 declare var $:JQueryStatic;
 @Component({
   selector: 'app-add-nicknames',
