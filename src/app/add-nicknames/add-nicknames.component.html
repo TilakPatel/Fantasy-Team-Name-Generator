@@ -26,8 +26,12 @@
         ">
           </div>
         </form>
-        <button class="btn btn-lg btn-success" (click)="submitFantasyName()">Submit</button>
+        <button class="btn btn-lg btn-success" (click)="submitFantasyName();">Submit</button>
       </div>
+      <div class="alert alert-success" id="alert">
+          <button type="button" class="close" (click)="closeAlert()">&times;</button>
+          <strong>Well done!</strong> You successfully read <a href="#" class="alert-link">this important alert message</a>.
+        </div>
     </div>
   </div>
 </div>
