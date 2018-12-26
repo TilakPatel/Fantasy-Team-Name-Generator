@@ -28,10 +28,15 @@
         </form>
         <button class="btn btn-lg btn-success" (click)="submitFantasyName();">Submit</button>
       </div>
-      <div class="alert alert-success" id="alert">
-          <button type="button" class="close" (click)="closeAlert()">&times;</button>
+      <div class="alert alert-success" id="alert-good">
+          <button type="button" class="close" (click)="closeGoodAlert()">&times;</button>
           <strong>Successfully submitted fantasy team name! Thank you for contributing.</strong>
         </div>
-    </div>
+        <div class="alert alert-danger" id="alert-bad">
+            <button type="button" class="close" (click)="closeBadAlert()">&times;</button>
+            <strong>Error! Something went wrong.</strong>
+          </div>
+      </div>
+    
   </div>
 </div>

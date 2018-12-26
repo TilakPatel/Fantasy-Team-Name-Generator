@@ -3,7 +3,7 @@ import { HttpClient, HttpParams } from '@angular/common/http'
 import { environment } from '../../environments/environment'
 import { Player } from '../nickname-display/player-model';
 import { JQueryStatic } from 'node_modules/jquery'
-declare var $:JQueryStatic;
+declare var $: JQueryStatic;
 @Component({
   selector: 'app-add-nicknames',
   templateUrl: './add-nicknames.component.html',
@@ -17,7 +17,8 @@ export class AddNicknamesComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    $('#alert').hide();
+    $('#alert-good').hide();
+    $('#alert-bad').hide();
   }
   updatePlayerName(event: KeyboardEvent) {
     this.playerName = (<HTMLInputElement>event.target).value;
@@ -27,21 +28,31 @@ export class AddNicknamesComponent implements OnInit {
   }
 
   submitFantasyName() {
-    $('#alert').hide();
-    let arr = [];
-    arr.push(this.fantasyTeamName);
-    const tempPlayer: Player = {
-      name: this.playerName,
-      nicknames: arr
+    if (this.fantasyTeamName == undefined || this.playerName == undefined || this.fantasyTeamName.length == 0 || this.playerName.length == 0) {
+      $('#alert-bad').hide();
+      $('#alert-bad').show();
+    } else {
+      this.http.put<{ nicknames: String[] }>(this.serverURL + '/player?name=' + this.playerName + '&nicknames[]=' + this.fantasyTeamName, {}).subscribe(data => {
+        $('#alert-good').hide();
+        let arr = [];
+        arr.push(this.fantasyTeamName);
+        const tempPlayer: Player = {
+          name: this.playerName,
+          nicknames: arr
+        }
+        var alertElement = document.getElementById('alert');
+        $('#alert-good').show();
+      });
     }
-    
-    this.http.put<{ nicknames: String[] }>(this.serverURL + '/player?name=' + this.playerName + '&nicknames[]=' + this.fantasyTeamName, {}).subscribe(data => {
-      var alertElement = document.getElementById('alert');
-      $('#alert').show();
-    });
+
+
+
   }
-  closeAlert(){
-    $('#alert').hide();
+  closeGoodAlert() {
+    $('#alert-good').hide();
+  }
+  closeBadAlert() {
+    $('#alert-bad').hide();
   }
 
 }
