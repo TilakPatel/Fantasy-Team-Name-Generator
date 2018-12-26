@@ -7,7 +7,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { TeamPickerComponent } from './team-picker/team-picker.component';
 import { HttpClientModule } from '@angular/common/http';
 const appRoutes: Routes = [
-  {path: 'nicknames', component: NicknameDisplayComponent},
+  {path: 'nicknames/:teamID/:token', component: NicknameDisplayComponent},
   {path: '', component: OAuthButtonComponent},
   {path: 'teamPicker/:token', component: TeamPickerComponent}
 ]

@@ -1,1 +1,17 @@
-<p *ngFor="let name of nicknames">{{name}}</p>
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4">Here are some generated nicknames!</h1>
+</div>
+<div class="container">
+    <div class="card-deck mb-3 text-center">
+        <div class="card mb-4 shadow-sm" *ngFor="let player of players">
+            <div class="card-header">
+                <h4 class="my-0 font-weight-normal">{{player.name}}</h4>
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" *ngFor="let name of player.nicknames">{{name}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
