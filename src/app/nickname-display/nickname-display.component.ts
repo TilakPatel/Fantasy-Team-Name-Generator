@@ -39,7 +39,6 @@ export class NicknameDisplayComponent implements OnInit {
         });
       }
     });
-    console.log(this.players);
   }
 
   getNickNamesOfPlayer(name) {

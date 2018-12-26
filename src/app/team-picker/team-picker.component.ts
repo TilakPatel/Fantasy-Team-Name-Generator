@@ -15,10 +15,8 @@ export class TeamPickerComponent implements OnInit {
   constructor(private route: ActivatedRoute, private http: HttpClient) { }
 
   ngOnInit() {
-    console.log('sdfjsdf');
     this.route.params.subscribe(params => this.accessToken = params['token']);
     this.http.get(this.serverURL + '/team/IDs?token=' + this.accessToken).subscribe(data => {
-      console.log(data);
       for (let id of <String[]>data) {
         const tempTeam : Team = new Team();
         tempTeam.id = id;
@@ -36,7 +34,6 @@ export class TeamPickerComponent implements OnInit {
         });
         this.teams.push(tempTeam);
       }
-      console.log(this.teams);
     });
   }
 

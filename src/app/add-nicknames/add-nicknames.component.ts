@@ -27,6 +27,7 @@ export class AddNicknamesComponent implements OnInit {
   }
 
   submitFantasyName() {
+    $('#alert').hide();
     let arr = [];
     arr.push(this.fantasyTeamName);
     const tempPlayer: Player = {
