@@ -28,12 +28,13 @@ export class AddNicknamesComponent implements OnInit {
   }
 
   submitFantasyName() {
+    $('#alert-good').hide();
+    $('#alert-bad').hide();
     if (this.fantasyTeamName == undefined || this.playerName == undefined || this.fantasyTeamName.length == 0 || this.playerName.length == 0) {
-      $('#alert-bad').hide();
       $('#alert-bad').show();
     } else {
       this.http.put<{ nicknames: String[] }>(this.serverURL + '/player?name=' + this.playerName + '&nicknames[]=' + this.fantasyTeamName, {}).subscribe(data => {
-        $('#alert-good').hide();
+        
         let arr = [];
         arr.push(this.fantasyTeamName);
         const tempPlayer: Player = {
