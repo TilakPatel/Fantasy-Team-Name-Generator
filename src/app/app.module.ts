@@ -6,10 +6,12 @@ import { NicknameDisplayComponent } from './nickname-display/nickname-display.co
 import { Routes, RouterModule } from '@angular/router';
 import { TeamPickerComponent } from './team-picker/team-picker.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AddNicknamesComponent } from './add-nicknames/add-nicknames.component';
 const appRoutes: Routes = [
   {path: 'nicknames/:teamID/:token', component: NicknameDisplayComponent},
   {path: '', component: OAuthButtonComponent},
-  {path: 'teamPicker/:token', component: TeamPickerComponent}
+  {path: 'teamPicker/:token', component: TeamPickerComponent},
+  {path: 'submitName', component: AddNicknamesComponent}
 ]
 
 @NgModule({
@@ -17,7 +19,8 @@ const appRoutes: Routes = [
     AppComponent,
     OAuthButtonComponent,
     NicknameDisplayComponent,
-    TeamPickerComponent
+    TeamPickerComponent,
+    AddNicknamesComponent
   ],
   imports: [
     BrowserModule,
