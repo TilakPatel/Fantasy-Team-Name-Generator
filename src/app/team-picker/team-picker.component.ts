@@ -51,4 +51,6 @@ export class TeamPickerComponent implements OnInit {
     return this.http.get<{ URL: String }>(this.serverURL + '/team/pictureURL?accesstoken=' + this.accessToken + '&teamID=' + team_ID);
   }
 
+ 
+
 }
