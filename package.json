@@ -12,7 +12,6 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/language-service": "~7.0.0",
     "@angular-devkit/build-angular": "~0.10.0",
     "@angular/animations": "^7.0.4",
     "@angular/cli": "~7.0.5",
@@ -23,14 +22,17 @@
     "@angular/fire": "^5.1.1",
     "@angular/forms": "~7.0.0",
     "@angular/http": "~7.0.0",
+    "@angular/language-service": "~7.0.0",
     "@angular/platform-browser": "^7.0.4",
     "@angular/platform-browser-dynamic": "~7.0.0",
     "@angular/router": "~7.0.0",
     "@nguniversal/express-engine": "^7.0.2",
     "angularfire2": "^5.1.1",
     "axios": "^0.18.0",
+    "bootstrap": "^4.2.1",
     "core-js": "^2.5.4",
     "firebase": "^5.7.0",
+    "jquery": "^3.3.1",
     "passport-yahoo-oauth": "^0.2.0",
     "rxjs": "~6.3.3",
     "typescript": "~3.1.6",
@@ -38,7 +40,6 @@
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
-    
     "@types/node": "~8.9.4",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
