@@ -13,6 +13,7 @@ export class AddNicknamesComponent implements OnInit {
   playerName: string;
   showAlert: boolean = false;
   fantasyTeamName: string;
+  spinning: string = "";
   serverURL: String = environment.URL;
   constructor(private http: HttpClient) { }
 
@@ -30,8 +31,10 @@ export class AddNicknamesComponent implements OnInit {
   submitFantasyName() {
     $('#alert-good').hide();
     $('#alert-bad').hide();
+    this.spinning = "fa-spin";
     if (this.fantasyTeamName == undefined || this.playerName == undefined || this.fantasyTeamName.length == 0 || this.playerName.length == 0) {
       $('#alert-bad').show();
+      this.spinning = "";
     } else {
       this.http.put<{ nicknames: String[] }>(this.serverURL + '/player?name=' + this.playerName + '&nicknames[]=' + this.fantasyTeamName, {}).subscribe(data => {
         
@@ -41,12 +44,10 @@ export class AddNicknamesComponent implements OnInit {
           name: this.playerName,
           nicknames: arr
         }
-        var alertElement = document.getElementById('alert');
         $('#alert-good').show();
+        this.spinning = "";
       });
     }
-
-
 
   }
   closeGoodAlert() {
