@@ -3,6 +3,6 @@
 @import 'https://use.fontawesome.com/releases/v5.6.3/css/all.css';
 
 body{
-    background-image: url(/assets/football_background_svg.svg);
+    background-image: url(football_background_svg.svg);
     background-size:4%;
 }
