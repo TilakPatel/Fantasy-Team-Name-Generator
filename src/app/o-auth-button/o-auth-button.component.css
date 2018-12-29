@@ -1,0 +1,12 @@
+h4{
+    padding-bottom: 1rem;
+}
+.jumbotron{
+    background-size:100%;
+    width:80%; 
+    margin-left:auto;
+    margin-right:auto;
+    border-style: solid;
+    border-color: #00bc8c;
+    background-color: transparent;
+}
