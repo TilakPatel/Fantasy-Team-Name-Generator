@@ -10,6 +10,7 @@ import { environment } from '../../environments/environment';
 export class NameVoteComponent implements OnInit {
   n1: String;
   n2: String;
+  spinnerText: String;
   currentPlayer: Player = new Player();
 
   serverURL: String = environment.URL;
@@ -20,11 +21,15 @@ export class NameVoteComponent implements OnInit {
   }
 
   refreshNames() {
+    this.spinnerText = 'fas fa-football-ball fa-spin';
+    this.n1 = "";
+    this.n2 = "";
     this.http.get<{ name: string, nicknames: [{ nickname: String, popularity: 0 }] }>(this.serverURL + '/randomPlayer').subscribe(data => {
       this.currentPlayer.name = data.name;
       this.currentPlayer.nicknames = data.nicknames;
       this.n1 = this.currentPlayer.nicknames[this.getRandomInt(0, this.currentPlayer.nicknames.length - 1)].nickname;
       this.n2 = this.currentPlayer.nicknames[this.getRandomInt(0, this.currentPlayer.nicknames.length - 1)].nickname;
+      this.spinnerText = "";
     });
 
   }
