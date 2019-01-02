@@ -2,9 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Player } from './player-model';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { environment } from '../../environments/environment'
-import { template } from '@angular/core/src/render3';
-import { isUndefined } from 'util';
+import { environment } from '../../environments/environment';
 @Component({
   selector: 'app-nickname-display',
   templateUrl: './nickname-display.component.html',
