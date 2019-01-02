@@ -31,8 +31,9 @@ export class NicknameDisplayComponent implements OnInit {
 
         const params = new HttpParams()
           .set('name', tempPlayer.name);
-        this.http.get<{ nicknames: String[] }>(this.serverURL + '/player', { params: params }).subscribe(data => {
+        this.http.get<{ name: string, nicknames: [{nickname: String, popularity: 0}] }>(this.serverURL + '/player', { params: params }).subscribe(data => {
           if (data != null && data.nicknames.length > 0) {
+            console.log(data);
             tempPlayer.nicknames = data.nicknames;
             this.players.push(tempPlayer);
           }

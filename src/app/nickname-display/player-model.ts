@@ -1,4 +1,4 @@
 export class Player {
     name: string;
-    nicknames: String[] = [];
+    nicknames: [{nickname: String, popularity: 0}];
 }

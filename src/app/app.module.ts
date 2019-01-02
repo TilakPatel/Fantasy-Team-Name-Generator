@@ -7,11 +7,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { TeamPickerComponent } from './team-picker/team-picker.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AddNicknamesComponent } from './add-nicknames/add-nicknames.component';
+import { NameVoteComponent } from './name-vote/name-vote.component';
 const appRoutes: Routes = [
   {path: 'nicknames/:teamID/:token', component: NicknameDisplayComponent},
   {path: '', component: OAuthButtonComponent},
   {path: 'teamPicker/:token', component: TeamPickerComponent},
-  {path: 'submitName', component: AddNicknamesComponent}
+  {path: 'submitName', component: AddNicknamesComponent},
+  {path: 'vote', component: NameVoteComponent}
 ]
 
 @NgModule({
@@ -20,7 +22,8 @@ const appRoutes: Routes = [
     OAuthButtonComponent,
     NicknameDisplayComponent,
     TeamPickerComponent,
-    AddNicknamesComponent
+    AddNicknamesComponent,
+    NameVoteComponent
   ],
   imports: [
     BrowserModule,

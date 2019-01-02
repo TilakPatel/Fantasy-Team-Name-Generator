@@ -1,21 +1,21 @@
-<h1>The following names were based on: </h1>
+<h1>The following names were based on: {{this.currentPlayer.name}}</h1>
 <div class="container">
   <div class="card-deck mb-3 text-center">
-      <div class="card mb-4 shadow-sm">
-          <div class="card-header">
-              <h4 class="my-0 font-weight-normal">{{this.p1.name}}</h4>
-          </div>
-          <div class="card-body">
-            <button type="button" class="btn btn-lg btn-block btn-success">Vote for this name!</button>
-          </div>
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">{{this.n1}}</h4>
       </div>
-      <div class="card mb-4 shadow-sm">
-        <div class="card-header">
-            <h4 class="my-0 font-weight-normal">{{this.p2.name}}</h4>
-        </div>
-        <div class="card-body">
-          <button type="button" class="btn btn-lg btn-block btn-success">Vote for this name!</button>
-        </div>
+      <div class="card-body">
+        <button type="button" class="btn btn-lg btn-block btn-success" (click)="voteForName(1)">Vote for this name!</button>
+      </div>
+    </div>
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">{{this.n2}}</h4>
+      </div>
+      <div class="card-body">
+        <button type="button" class="btn btn-lg btn-block btn-success" (click)="voteForName(2)">Vote for this name!</button>
+      </div>
     </div>
   </div>
 </div>

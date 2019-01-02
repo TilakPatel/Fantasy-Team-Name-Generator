@@ -22,10 +22,10 @@ export class AddNicknamesComponent implements OnInit {
     $('#alert-bad').hide();
   }
   updatePlayerName(event: KeyboardEvent) {
-    this.playerName = (<HTMLInputElement>event.target).value;
+    this.playerName = (<HTMLInputElement>event.target).value.toLowerCase();
   }
   updateFantasyTeamName(event: KeyboardEvent) {
-    this.fantasyTeamName = (<HTMLInputElement>event.target).value;
+    this.fantasyTeamName = (<HTMLInputElement>event.target).value.toLowerCase();
   }
 
   submitFantasyName() {
@@ -42,7 +42,7 @@ export class AddNicknamesComponent implements OnInit {
         arr.push(this.fantasyTeamName);
         const tempPlayer: Player = {
           name: this.playerName,
-          nicknames: arr
+          nicknames: [{nickname: this.fantasyTeamName, popularity: 0}]
         }
         $('#alert-good').show();
         this.spinning = "";
