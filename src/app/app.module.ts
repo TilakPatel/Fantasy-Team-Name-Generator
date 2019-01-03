@@ -8,6 +8,8 @@ import { TeamPickerComponent } from './team-picker/team-picker.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AddNicknamesComponent } from './add-nicknames/add-nicknames.component';
 import { NameVoteComponent } from './name-vote/name-vote.component';
+import { polyfill as keyboardEventKeyPolyfill } from 'keyboardevent-key-polyfill';
+import { TextInputAutocompleteModule } from 'angular-text-input-autocomplete';
 const appRoutes: Routes = [
   {path: 'nicknames/:teamID/:token', component: NicknameDisplayComponent},
   {path: '', component: OAuthButtonComponent},
@@ -15,6 +17,8 @@ const appRoutes: Routes = [
   {path: 'submitName', component: AddNicknamesComponent},
   {path: 'vote', component: NameVoteComponent}
 ]
+
+keyboardEventKeyPolyfill();
 
 @NgModule({
   declarations: [
@@ -28,7 +32,8 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    HttpClientModule
+    HttpClientModule,
+    TextInputAutocompleteModule
   ],
   providers: [],
   bootstrap: [AppComponent]

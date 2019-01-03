@@ -5,38 +5,41 @@
         <h3>Add Team Names</h3>
       </div>
       <div class="card-body">
+          <mwl-text-input-autocomplete-container>
         <form>
           <div class="form-group">
             <label for="exampleInputEmail1">
               <h4>NAME OF PLAYER</h4>
             </label>
-            <input (keyup)="updatePlayerName($event)" type="kjj" class="form-control" aria-describedby="emailHelp" placeholder="Enter First and Last Name of Player"
-              style="
-                        text-align: center;
-                    ">
+            <select class="custom-select" id="playerSelect">
+                <option selected="">Select a player</option>
+                <option *ngFor="let name of this.playerNames" value={{name}}>{{name}}</option>
+              </select>
             <h6 id="emailHelp" class="form-text text-muted">Copy name <i>exactly</i> as seen on Yahoo Fantasy (e.g.
-              Todd Gurley II). For defense, use just the city name. For example, use Pittsburgh instead of Pitssburgh Steelers. Case doesnt matter.</h6>
+              Todd Gurley II). For defense, use just the city name. For example, use Pittsburgh instead of Pitssburgh
+              Steelers. Case doesnt matter.</h6>
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">
               <h4>FANTASY TEAM NAME</h4>
             </label>
-            <input (keyup)="updateFantasyTeamName($event)" type="email" class="form-control" placeholder="Fantasy Team Name" style="
-            text-align: center;
-        ">
+              <input id = "teamName" type="email" class="form-control" placeholder="Fantasy Team Name"
+                style="
+            text-align: center;">
           </div>
         </form>
+      </mwl-text-input-autocomplete-container>
         <button class="btn btn-lg btn-success" (click)="submitFantasyName();">Submit&emsp;<i class='fa fa-football-ball {{this.spinning}}'></i></button>
       </div>
       <div class="alert alert-success" id="alert-good">
-          <button type="button" class="close" (click)="closeGoodAlert()">&times;</button>
-          <strong>Successfully submitted fantasy team name! Thank you for contributing.</strong>
-        </div>
-        <div class="alert alert-danger" id="alert-bad">
-            <button type="button" class="close" (click)="closeBadAlert()">&times;</button>
-            <strong>Error! Something went wrong.</strong>
-          </div>
+        <button type="button" class="close" (click)="closeGoodAlert()">&times;</button>
+        <strong>Successfully submitted fantasy team name! Thank you for contributing.</strong>
       </div>
-    
+      <div class="alert alert-danger" id="alert-bad">
+        <button type="button" class="close" (click)="closeBadAlert()">&times;</button>
+        <strong>Error! Something went wrong.</strong>
+      </div>
+    </div>
+
   </div>
 </div>
