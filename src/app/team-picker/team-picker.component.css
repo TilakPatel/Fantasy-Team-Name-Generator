@@ -1,11 +1,11 @@
-.card-body img {
+#cardIMG {
 	margin-left: auto;
 	margin-right: auto;
     display: block;
     border-radius: 50%;
     display:inline-block;
-    width: 40%;
-    height: 40%;
+    width: 1.5em;
+    height: 1.5em;
 }
 
 .card-deck {
