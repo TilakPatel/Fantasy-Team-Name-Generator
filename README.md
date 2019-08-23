@@ -1,7 +1,12 @@
 # Fantasy Team Name Generator
 
-## Site that allows you to connect your Yahoo Fantasy Account using OAuth2, and get generated team names according to players on your fantasy team.
+## Web application that allows you to connect your Yahoo Fantasy Account using OAuth2, and get generated team names according to players on your fantasy team.
 
-## Users can submit their own player nicknames.
+- Angular.JS
+- Node.JS
+- MongoDB
+- Bootstrap
 
-### Developed using the MEAN stack.
+- Submit team names
+- Vote on team names
+- Connect your Yahoo account to get personalized team recommendations
